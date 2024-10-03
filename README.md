@@ -14,9 +14,13 @@ Extractive summarization involves selecting key sentences from the text itself t
 
 In this project, the **Sumy** library is used with the **LexRank** algorithm to implement extractive summarization.
 
+You can take a look in the **ext_app.py** for the model
+
 ### 2. **Abstractive Summarization**:
 Abstractive summarization generates new sentences that convey the most critical information from the original text. This approach is closer to how humans summarize and rephrase content. It uses language generation models to create summaries that do not copy-paste the original text directly.
 
 This project uses the **Pegasus** model (by Google) for abstractive summarization, which is one of the state-of-the-art models for text generation tasks.
+
+You can take a look in the **app.py** for the model
 
 
