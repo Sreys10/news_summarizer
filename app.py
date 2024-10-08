@@ -1,3 +1,4 @@
+import time
 import requests
 from bs4 import BeautifulSoup
 from transformers import BartForConditionalGeneration, BartTokenizer
@@ -57,9 +58,33 @@ def main():
             try:
                 article_text = extract_text_from_url(url)
                 if article_text:
-                    summary = summarize_text(article_text)
+                    # Placeholder for messages
+                    placeholder = st.empty()
+
+                    # Show playful messages while summary is being generated
+                    with st.spinner("Hold tight..."):
+                        placeholder.write("🌐 Web scraping the article...")  # First step
+                        time.sleep(5)  # Simulating delay for web scraping
+
+                        placeholder.write("💡 Understanding the content...")  # Next step
+                        time.sleep(5)  # Simulating delay for content analysis
+
+                        placeholder.write("✍️ Summarizing the article...")  # Final step
+                        time.sleep(5)  # Simulating delay for summarization
+
+                        placeholder.write("💡 Almost there...")  # Next step
+                        time.sleep(5)  # Simulating delay for content analysis
+
+                        summary = summarize_text(article_text)
+
+                    # Clear the messages after the summary is generated
+                    placeholder.empty()
+
                     st.subheader("Summary:")
-                    st.write(summary)
+
+                    # Display the summary in a text area for easy copying
+                    st.text_area("Summary", summary, height=200)
+
                 else:
                     st.write("Could not extract any text from the article.")
             except Exception as e:
